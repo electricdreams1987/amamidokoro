@@ -34,15 +34,13 @@ const ShopMap: React.FC<ShopMapProps> = ({ shops, selectedShopId, onSelectShop }
   };
 
   return (
-    <div className="relative w-full h-full bg-[#fdfbf7] overflow-hidden rounded-2xl border-2 border-white shadow-inner font-outfit">
-      {/* Background Water (East/South) */}
-      <div className="absolute inset-0 bg-blue-50 opacity-20" 
-           style={{ clipPath: 'polygon(70% 0%, 100% 0%, 100% 100%, 40% 100%, 60% 60%)' }}>
-      </div>
+    <div className="relative w-full h-full min-h-[300px] bg-[#fdfbf7] overflow-hidden rounded-2xl border-2 border-white shadow-inner font-outfit">
+      {/* Background Water (Simplified) */}
+      <div className="absolute bottom-0 right-0 w-1/3 h-1/3 bg-blue-50 opacity-40 rounded-tl-[100%] pointer-events-none"></div>
 
       {/* Abstract Map Background Grid */}
-      <div className="absolute inset-0 opacity-20 pointer-events-none" 
-           style={{ backgroundImage: 'radial-gradient(#d4d4d8 1px, transparent 1px)', backgroundSize: '30px 30px' }}>
+      <div className="absolute inset-0 opacity-40 pointer-events-none" 
+           style={{ backgroundImage: 'radial-gradient(#cbd5e1 1px, transparent 1px)', backgroundSize: '30px 30px' }}>
       </div>
       
       {/* Orientation Circles (Abstract Yamanote Line) */}
@@ -59,7 +57,7 @@ const ShopMap: React.FC<ShopMapProps> = ({ shops, selectedShopId, onSelectShop }
       </div>
 
       {/* Pins */}
-      <div className="absolute inset-12">
+      <div className="absolute inset-6">
         {shops.map((shop) => {
           const { top, left } = getPos(shop.lat, shop.lng);
           const isSelected = selectedShopId === shop.id;

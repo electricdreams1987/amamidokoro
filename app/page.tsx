@@ -101,9 +101,9 @@ export default function Home() {
       </header>
 
       {/* Main Content */}
-      <main className="flex-1 flex overflow-hidden">
+      <main className="flex-1 flex overflow-hidden h-full min-h-0">
         {/* Left Sidebar: Search & List */}
-        <div className={`flex-shrink-0 border-r border-amber-50 bg-white transition-all duration-500 ease-in-out ${
+        <div className={`flex-shrink-0 border-r border-amber-50 bg-white transition-all duration-500 ease-in-out h-full min-h-0 ${
           viewMode === "map" ? "w-0 opacity-0 overflow-hidden" : "w-full md:w-80 lg:w-96 opacity-100"
         }`}>
           <SearchAndFilter shops={allShops} onFilterChange={setFilteredShops}>
@@ -125,9 +125,9 @@ export default function Home() {
         </div>
 
         {/* Center/Right: Map & Detail */}
-        <div className="flex-1 flex flex-col md:flex-row overflow-hidden bg-slate-100">
+        <div className="flex-1 flex flex-col md:flex-row overflow-hidden bg-slate-100 h-full min-h-0">
           {/* Map Area */}
-          <div className={`flex-1 p-4 transition-all duration-500 ${
+          <div className={`flex-1 p-4 transition-all duration-500 h-full min-h-0 ${
             viewMode === "list" ? "hidden" : "block"
           }`}>
             <ShopMap 

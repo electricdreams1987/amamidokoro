@@ -22,7 +22,7 @@ const SearchAndFilter: React.FC<SearchAndFilterProps> = ({ shops, onFilterChange
   }, [shops]);
 
   // Handle filtering
-  useMemo(() => {
+  React.useEffect(() => {
     const filtered = shops.filter(shop => {
       const matchesSearch = 
         shop.name.toLowerCase().includes(searchTerm.toLowerCase()) ||

@@ -100,12 +100,24 @@ const ShopDetailPanel: React.FC<ShopDetailPanelProps> = ({ shop }) => {
 
         <div className="bg-gray-50 rounded-xl p-4 mb-8">
           <p className="text-sm text-gray-700 mb-4">{shop.feature}</p>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2 mb-4">
             {shop.tags.map(tag => (
               <span key={tag} className="text-xs bg-white border border-gray-200 text-gray-600 px-2.5 py-1 rounded-full shadow-sm">
                 #{tag}
               </span>
             ))}
+          </div>
+          
+          {/* Real Map iframe */}
+          <div className="w-full aspect-[4/3] rounded-lg overflow-hidden border border-gray-200 shadow-inner">
+            <iframe
+              width="100%"
+              height="100%"
+              frameBorder="0"
+              style={{ border: 0 }}
+              src={`https://maps.google.com/maps?q=${encodeURIComponent(shop.name)}+${encodeURIComponent(shop.area)}&z=15&output=embed`}
+              allowFullScreen
+            ></iframe>
           </div>
         </div>
 
